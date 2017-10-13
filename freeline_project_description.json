@@ -1,0 +1,277 @@
+{
+    "project_type": "gradle",
+    "android_gradle_plugin_version": "2.3.3",
+    "freeline_gradle_plugin_version": "0.8.8",
+    "java_home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home",
+    "freeline_cache_dir": "/Users/sher/Developer/source/freeline",
+    "auto_dependency": false,
+    "product_flavor": "develop",
+    "build_script": "./gradlew :app:assembleDevelopDebug",
+    "build_script_work_directory": "",
+    "root_dir": "/Users/sher/Developer/source/freeline",
+    "main_project_name": "app",
+    "main_project_dir": "freeline-sample/app",
+    "build_directory": "/Users/sher/Developer/source/freeline/freeline-sample/app/build",
+    "build_cache_dir": "/Users/sher/Developer/source/freeline/freeline-sample/app/build/freeline",
+    "build_tools_version": "25.0.2",
+    "sdk_directory": "/Users/sher/Developer/android-sdk",
+    "build_tools_directory": "/Users/sher/Developer/android-sdk/build-tools/25.0.2",
+    "compile_sdk_version": "android-25",
+    "compile_sdk_directory": "/Users/sher/Developer/android-sdk/platforms/android-25",
+    "package": "com.antfortune.freeline.sample",
+    "debug_package": "com.antfortune.freeline.sample.dev",
+    "main_manifest_path": "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/AndroidManifest.xml",
+    "launcher": "com.antfortune.freeline.sample.MainActivity",
+    "apk_path": "/Users/sher/Developer/source/freeline/freeline-sample/app/build/outputs/apk/app-develop-debug.apk",
+    "extra_dep_res_paths": [
+        
+    ],
+    "exclude_dep_res_paths": [
+        
+    ],
+    "main_r_path": "/Users/sher/Developer/source/freeline/freeline-sample/app/build/generated/source/r/develop/debug/R.java",
+    "use_jdk8": true,
+    "ignore_resource_ids": [
+        "avd_hide_password_1",
+        "avd_hide_password_2",
+        "avd_hide_password_3",
+        "avd_show_password_1",
+        "avd_show_password_2",
+        "avd_show_password_3"
+    ],
+    "use_system_gradle": false,
+    "check_sources_md5": [
+        
+    ],
+    "main_src_directory": [
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/java",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/java",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/java",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/java"
+    ],
+    "main_res_directory": [
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/res",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/res",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/res",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/res"
+    ],
+    "main_assets_directory": [
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/assets",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/assets",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/assets",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/assets"
+    ],
+    "main_jni_directory": [
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/jni",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/jni",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/jni",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/jni"
+    ],
+    "main_jniLibs_directory": [
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/jniLibs",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/jniLibs",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/jniLibs",
+        "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/jniLibs"
+    ],
+    "project_source_sets": {
+        "app": {
+            "main_src_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/java",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/java",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/java",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/java"
+            ],
+            "main_res_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/res"
+            ],
+            "main_assets_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/assets",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/assets",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/assets",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/assets"
+            ],
+            "main_jni_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/jni",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/jni",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/jni",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/jni"
+            ],
+            "main_jniLibs_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/developDebug/jniLibs",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/buildType/debug/jniLibs",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/develop/jniLibs",
+                "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/jniLibs"
+            ],
+            "main_manifest_path": "/Users/sher/Developer/source/freeline/freeline-sample/app/src/main/AndroidManifest.xml"
+        },
+        "common": {
+            "main_src_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/release/java",
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/main/java"
+            ],
+            "main_res_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/release/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/main/res"
+            ],
+            "main_assets_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/release/assets",
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/main/assets"
+            ],
+            "main_jni_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/release/jni",
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/main/jni"
+            ],
+            "main_jniLibs_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/release/jniLibs",
+                "/Users/sher/Developer/source/freeline/freeline-sample/common/src/main/jniLibs"
+            ],
+            "main_manifest_path": "/Users/sher/Developer/source/freeline/freeline-sample/common/src/main/AndroidManifest.xml"
+        },
+        "PureJavaLib": {
+            "main_src_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/PureJavaLib/src/main/java"
+            ],
+            "main_res_directory": [
+                
+            ],
+            "main_assets_directory": [
+                
+            ],
+            "main_jni_directory": [
+                
+            ],
+            "main_jniLibs_directory": [
+                
+            ],
+            "main_manifest_path": null
+        },
+        "share": {
+            "main_src_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/release/java",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/main/java"
+            ],
+            "main_res_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/release/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/main/res"
+            ],
+            "main_assets_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/release/assets",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/main/assets"
+            ],
+            "main_jni_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/release/jni",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/main/jni"
+            ],
+            "main_jniLibs_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/release/jniLibs",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/main/jniLibs"
+            ],
+            "main_manifest_path": "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share/src/main/AndroidManifest.xml"
+        },
+        "payment": {
+            "main_src_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/release/java",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/main/java"
+            ],
+            "main_res_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/release/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/main/res"
+            ],
+            "main_assets_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/release/assets",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/main/assets"
+            ],
+            "main_jni_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/release/jni",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/main/jni"
+            ],
+            "main_jniLibs_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/release/jniLibs",
+                "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/main/jniLibs"
+            ],
+            "main_manifest_path": "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment/src/main/AndroidManifest.xml"
+        },
+        "resources": {
+            "main_src_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/release/java",
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/main/java"
+            ],
+            "main_res_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/release/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/main/res",
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/main/res_emoji"
+            ],
+            "main_assets_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/release/assets",
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/main/assets"
+            ],
+            "main_jni_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/release/jni",
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/main/jni"
+            ],
+            "main_jniLibs_directory": [
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/release/jniLibs",
+                "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/main/jniLibs"
+            ],
+            "main_manifest_path": "/Users/sher/Developer/source/freeline/freeline-sample/resources/src/main/AndroidManifest.xml"
+        }
+    },
+    "modules": [
+        {
+            "name": "app",
+            "path": "/Users/sher/Developer/source/freeline/freeline-sample/app"
+        },
+        {
+            "name": "common",
+            "path": "/Users/sher/Developer/source/freeline/freeline-sample/common"
+        },
+        {
+            "name": "PureJavaLib",
+            "path": "/Users/sher/Developer/source/freeline/freeline-sample/PureJavaLib"
+        },
+        {
+            "name": "share",
+            "path": "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/share"
+        },
+        {
+            "name": "payment",
+            "path": "/Users/sher/Developer/source/freeline/freeline-sample/ThirdParty/payment"
+        },
+        {
+            "name": "resources",
+            "path": "/Users/sher/Developer/source/freeline/freeline-sample/resources"
+        }
+    ],
+    "module_dependencies": {
+        "app": [
+            "common",
+            "PureJavaLib",
+            "share",
+            "payment"
+        ],
+        "common": [
+            "resources"
+        ],
+        "resources": [
+            
+        ],
+        "PureJavaLib": [
+            
+        ],
+        "share": [
+            
+        ],
+        "payment": [
+            
+        ]
+    },
+    "databinding": [
+        
+    ],
+    "databinding_modules": [
+        
+    ]
+}
