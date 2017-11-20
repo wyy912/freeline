@@ -43,6 +43,7 @@ class FreelinePlugin implements Plugin<Project> {
         }
 
         project.afterEvaluate {
+            dealWithResolveProblem(project)
             // check
             if (!project.plugins.hasPlugin("com.android.application")) {
                 throw new RuntimeException("Freeline plugin can only be applied for android application module.")
@@ -59,6 +60,13 @@ class FreelinePlugin implements Plugin<Project> {
                 def retrolambdaEnabled = extension.retrolambdaEnabled
                 def forceVersionName = extension.forceVersionName
                 def freelineBuild = FreelineUtils.getProperty(project, "freelineBuild")
+                def customAnnotationSupportEnabled = false
+
+                println "ext:::${extension.productFlavor}"
+
+                if (extension.annotationMap.size() > 0){
+                    customAnnotationSupportEnabled = true
+                }
 
                 //早点判断Android Studio的plugin版本
                 def isLowerVersion = false
@@ -155,7 +163,12 @@ class FreelinePlugin implements Plugin<Project> {
                         output.processManifest.doLast {
                             if(isStudioCanaryVersion){
 //                            修改了Manifest的获取方式 之前api已被取消 不过根据Manifest的位置相对固定就这样子去访问了
-                                def path = "${project.buildDir}/intermediates/manifests/full/debug/AndroidManifest.xml"
+                                def flavorpath = ""
+                                if (productFlavor.toString() != "") { //当时写成了 == 真是石乐志
+                                    flavorpath = "/$productFlavor"
+                                }
+                                def path = "${project.buildDir}/intermediates/manifests/full$flavorpath/debug/AndroidManifest.xml"
+                                print "fuck!!$path"
                                 def manifestFile = new File(path)
                                 if (manifestFile.exists()) {
                                     println "find manifest file path: ${manifestFile.absolutePath}"
@@ -209,7 +222,7 @@ class FreelinePlugin implements Plugin<Project> {
                         }
 
                         // find apt config
-                        findAptConfig(pro, variant, projectAptConfig)
+                        findAptConfig(pro, variant, projectAptConfig, productFlavor)
                     }
 
                     // find retrolambda config
@@ -249,6 +262,15 @@ class FreelinePlugin implements Plugin<Project> {
                             }
                         }
                     }
+
+                    if (customAnnotationSupportEnabled){
+                        extension.annotationMap.each { entry ->
+                            //在 Freeline注解收集器中注册
+                            FreelineAnnotationCollector.CUSTOM_ANNOTATION_TARGETS.put(entry.key,entry.value)
+                            FreelineAnnotationCollector.ANNOTATION_CLASSES.add(entry.key)
+                        }
+                    }
+
                 }
 
                 // find databinding compiler jar path
@@ -395,11 +417,13 @@ class FreelinePlugin implements Plugin<Project> {
                 }
 
                 if (multiDexEnabled && applicationProxy) {
-                    def manifestKeepFile = new File("${project.buildDir}/intermediates/multi-dex/${variant.dirName}/manifest_keep.txt")
+                    def mainDexListFile = new File("${project.buildDir}/intermediates/multi-dex/${variant.dirName}/maindexlist.txt")
                     if (multiDexListTask) {
                         multiDexListTask.outputs.upToDateWhen { false }
-                        multiDexListTask.doFirst {
-                            manifestKeepFile << "-keep class com.antfortune.freeline.** { *; }"
+                        multiDexListTask.doLast {
+                            Constants.FREELINE_CLASSES.each { clazz ->
+                                mainDexListFile << "\n${clazz}"
+                            }
                         }
                     }
                 }
@@ -682,12 +706,7 @@ class FreelinePlugin implements Plugin<Project> {
         return javaCompile
     }
 
-    private static def findAptConfig(Project project, def variant, def projectAptConfig) {
-        def javaCompile = getJavaCompileTask(variant, project)
-
-        def aptConfiguration = project.configurations.findByName("apt")
-        def isAptEnabled = project.plugins.hasPlugin("android-apt") && aptConfiguration != null && !aptConfiguration.empty
-
+    private static def dealWithResolveProblem(Project project) {
         //只需要在AS3.0的plugin启用 在旧版启用会崩
         def shouldDealWithResolveProblem = false
         project.rootProject.buildscript.configurations.classpath.resolvedConfiguration.firstLevelModuleDependencies.each {
@@ -702,8 +721,34 @@ class FreelinePlugin implements Plugin<Project> {
                 config -> config.setCanBeResolved(true)
             }
         }
+    }
 
-        def annotationProcessorConfig = project.configurations.findByName("annotationProcessor")
+    private static def findAptConfig(Project project, def variant, def projectAptConfig, def productFlavor = "") {
+        def javaCompile = getJavaCompileTask(variant, project)
+
+        def aptConfiguration = project.configurations.findByName("apt")
+        def isAptEnabled = project.plugins.hasPlugin("android-apt") && aptConfiguration != null && !aptConfiguration.empty
+
+        def annotationProcessorConfig
+
+        def isStudio3Plugin = false
+        project.rootProject.buildscript.configurations.classpath.resolvedConfiguration.firstLevelModuleDependencies.each {
+            if (it.moduleGroup == "com.android.tools.build" && it.moduleName == "gradle") {
+                if (it.moduleVersion.startsWith("3")) {
+                    isStudio3Plugin = true
+                }
+            }
+        }
+
+        if (!isStudio3Plugin) {
+           annotationProcessorConfig = project.configurations.findByName("annotationProcessor")
+        } else if (productFlavor == ""){
+            annotationProcessorConfig = project.configurations.findByName("annotationProcessor")
+        } else {
+            annotationProcessorConfig = project.configurations.findByName("${productFlavor}AnnotationProcessor")
+        }
+
+
 //        annotationProcessorConfig.setCanBeResolved(true)
         def isAnnotationProcessor = annotationProcessorConfig != null && !annotationProcessorConfig.empty
 
